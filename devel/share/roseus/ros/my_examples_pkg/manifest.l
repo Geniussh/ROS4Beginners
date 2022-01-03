@@ -1,0 +1,1 @@
+/home/user/catkin_ws/devel/.private/my_examples_pkg/share/roseus/ros/my_examples_pkg/manifest.l

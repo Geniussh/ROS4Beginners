@@ -1,0 +1,5 @@
+<launch>
+  <!-- topics quiz launch file -->
+  <node pkg="topics_quiz" type="obstacle_avoid.py" name="topics_quiz_node" output="screen">
+  </node>
+</launch>

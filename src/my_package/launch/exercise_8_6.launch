@@ -1,0 +1,8 @@
+<launch>
+  <!-- My package launch file -->
+  <node pkg="my_package" 
+        type="exercise_8_6.py" 
+        name="my_package_node" 
+        output="screen">
+  </node>
+</launch>
