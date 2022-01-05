@@ -29,6 +29,10 @@ CATKIN_ENABLE_TESTING:BOOL=ON
 //Catkin skip testing
 CATKIN_SKIP_TESTING:BOOL=OFF
 
+//Replace the CMake install command with a custom implementation
+// using symlinks instead of copying resources
+CATKIN_SYMLINK_INSTALL:BOOL=OFF
+
 //List of ';' separated packages to build
 CATKIN_WHITELIST_PACKAGES:STRING=
 
@@ -237,6 +241,9 @@ RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
 //Enable debian style python package layout
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 
+//Name of the computer/site where compile is being run
+SITE:STRING=ca304168ba83
+
 //LSB Distrib tag
 UBUNTU:BOOL=TRUE
 
@@ -297,6 +304,30 @@ gtest_force_shared_crt:BOOL=OFF
 
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
+
+//Value Computed by CMake
+my_package_BINARY_DIR:STATIC=/home/user/catkin_ws/build/my_package
+
+//Value Computed by CMake
+my_package_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/my_package
+
+//The directory containing a CMake configuration file for rospy.
+rospy_DIR:PATH=/opt/ros/kinetic/share/rospy/cmake
+
+//Value Computed by CMake
+tf_quiz_BINARY_DIR:STATIC=/home/user/catkin_ws/build/tf_quiz
+
+//Value Computed by CMake
+tf_quiz_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/tf_quiz
+
+//Value Computed by CMake
+tf_quiz_static_transform_BINARY_DIR:STATIC=/home/user/catkin_ws/build/tf_quiz_static_transform
+
+//Value Computed by CMake
+tf_quiz_static_transform_SOURCE_DIR:STATIC=/home/user/catkin_ws/src/tf_quiz_static_transform
+
+//The directory containing a CMake configuration file for turtle_tf_3d.
+turtle_tf_3d_DIR:PATH=/home/simulations/public_sim_ws/devel/share/turtle_tf_3d/cmake
 
 
 ########################
@@ -400,7 +431,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

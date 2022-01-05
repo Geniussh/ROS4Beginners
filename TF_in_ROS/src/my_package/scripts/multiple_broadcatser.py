@@ -14,10 +14,11 @@ def handle_turtle_pose(pose_msg, robot_name):
                      robot_name,
                      "/world")
 
+
 def publisher_of_tf():
     
     rospy.init_node('publisher_of_tf_node', anonymous=True)
-    robot_name_list = ["turtle1","turtle2"]
+    robot_name_list = ["turtle1","turtle2","coke_can"]
     gazebo_model_object = GazeboModel(robot_name_list)
     
     # Leave enough time to be sure the Gazebo Model logs have finished
@@ -32,6 +33,7 @@ def publisher_of_tf():
                 print "The " + str(robot_name) + "'s Pose is not yet available...Please try again later"
             else:
                 handle_turtle_pose(pose_now, robot_name)
+    
         rate.sleep()
     
 

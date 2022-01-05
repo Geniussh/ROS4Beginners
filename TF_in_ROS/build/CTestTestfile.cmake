@@ -5,3 +5,6 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
+subdirs(my_package)
+subdirs(tf_quiz)
+subdirs(tf_quiz_static_transform)
