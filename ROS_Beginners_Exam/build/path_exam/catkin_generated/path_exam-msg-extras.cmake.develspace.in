@@ -1,0 +1,2 @@
+set(path_exam_MESSAGE_FILES "/home/user/catkin_ws/devel/share/path_exam/msg/RecordOdomAction.msg;/home/user/catkin_ws/devel/share/path_exam/msg/RecordOdomActionGoal.msg;/home/user/catkin_ws/devel/share/path_exam/msg/RecordOdomActionResult.msg;/home/user/catkin_ws/devel/share/path_exam/msg/RecordOdomActionFeedback.msg;/home/user/catkin_ws/devel/share/path_exam/msg/RecordOdomGoal.msg;/home/user/catkin_ws/devel/share/path_exam/msg/RecordOdomResult.msg;/home/user/catkin_ws/devel/share/path_exam/msg/RecordOdomFeedback.msg")
+set(path_exam_SERVICE_FILES "")
