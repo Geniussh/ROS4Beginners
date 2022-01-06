@@ -1,0 +1,13 @@
+<launch>
+    <!-- 
+rosrun cmvision colorgui image:=/camera/rgb/image_color -->
+
+    <arg name="image_topic" default="/mira/mira/camera1/image_raw"/>
+
+    <node name="color_gui_node" pkg="cmvision" type="colorgui" respawn="false"
+    output="screen">
+        <remap from="image" to="$(arg image_topic)"/>
+    </node>
+    
+
+</launch>

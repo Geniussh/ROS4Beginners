@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    <arg name="robot" default="machines"/>
+    <arg name="debug" default="false"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="pause" default="false"/>  <!-- Start Gazebo with a blank world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find spawn_robot_tools_pkg)/worlds/urdf_demo.world"/>
+        <arg name="debug" value="$(arg debug)" />
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="paused" value="$(arg pause)"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="headless" value="$(arg headless)"/>
+    </include>
+
+    <node name="spawn_mira_robot" pkg="mira_description" type="spawn_mira_closedloop.sh" respawn="false" output="screen"/>
+    <include file="$(find blob_tracking)/launch/make_ball_movable.launch"/>
+    
+    <!-- Reads the cmdvel and moves miras head accordingly -->
+    <node name="mira_move_head_node" pkg="blob_tracking" type="mira_move_head.py" respawn="false"
+    output="screen"/>
+
+</launch>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    <node name="jibo_demo" pkg="jibo_description" type="jibo_demo.py"
+    respawn="false" output="screen"/>
+    <node name="mira_demo" pkg="mira_description" type="mira_demo.py"
+    respawn="false" output="screen"/>
+    <node name="gurdy_demo" pkg="gurdy_description" type="gurdy_demo.py"
+    respawn="false" output="screen"/>
+</launch>

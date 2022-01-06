@@ -1,0 +1,191 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="mira">
+    <!--
+    <link name="base_link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>0.0002835</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0002835</iyy>
+          <iyz>0</iyz>
+          <izz>0.000324</izz>
+        </inertia>
+        <mass>0.18</mass>
+      </inertial>
+      <collision name="collision">
+        <pose>0 0 0.004 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.06</radius>
+            <length>0.09</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10</mu>
+              <mu2>10</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mira/meshes/mira_body_v2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="roll_M1_link">
+      <pose>0 0 0 0 0 0</pose>
+      <visual name="visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+            <length>0.01</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name="roll_joint" type="revolute">
+      <pose>0.023 0 -0.005 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>roll_M1_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+        <lower>-0.23</lower>
+        <upper>0.23</upper>
+        </limit>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+
+
+    <link name="pitch_M2_link">
+      <pose>0 0 0 0 0 0</pose>
+      <visual name="visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+            <length>0.01</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name="pitch_joint" type="revolute">
+      <pose>0 0 0 0 -1.5708 0</pose>
+      <parent>roll_M1_link</parent>
+      <child>pitch_M2_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+        <lower>0.0</lower>
+        <upper>0.44</upper>
+        </limit>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+
+
+    <link name="yaw_M3_link">
+      <pose>0 0 0 0 0 0</pose>
+      <visual name="visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+            <length>0.01</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name="yaw_joint" type="revolute">
+      <pose>0.1 0 0 0 1.5708 0</pose>
+      <parent>pitch_M2_link</parent>
+      <child>yaw_M3_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+        <lower>0.0</lower>
+        <upper>0.44</upper>
+        </limit>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+    -->
+    <link name="head_link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>0.0002835</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0002835</iyy>
+          <iyz>0</iyz>
+          <izz>0.000324</izz>
+        </inertia>
+        <mass>0.18</mass>
+      </inertial>
+      <collision name="collision">
+        <pose>0 0 0.035 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.06</radius>
+            <length>0.07</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10</mu>
+              <mu2>10</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://mira/meshes/mira_head_v4.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <!--
+    <joint name="base_head_joint" type="fixed">
+    	<parent link="yaw_M3_link"/>
+    	<child link="head_link"/>
+    	<origin xyz="0 0 0" rpy="0 0 0"/>
+	</joint>
+
+    <joint name="yaw_joint" type="fixed">
+      <pose>0.1 0 0 0 1.5708 0</pose>
+      <parent>yaw_M3_link</parent>
+      <child>head_link</child>
+    </joint>
+    -->
+
+  </model>
+</sdf>

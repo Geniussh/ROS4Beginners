@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+   
+    <!-- Start cmvision block tracking for mira -->
+    <include file="$(find blob_tracking)/launch/mira_cmvision_tc.launch"/>
+    
+    <!-- Node that reads the block tracking data and publishes a cmdvel -->
+    <node name="track_blob_color_node" pkg="blob_tracking" type="track_color.py" respawn="false"
+    output="screen"/>
+    
+    <!-- Reads the cmdvel and moves miras head accordingly -->
+    <!--
+    <node name="mira_move_head_node" pkg="blob_tracking" type="mira_move_head.py" respawn="false"
+    output="screen"/>
+    -->
+</launch>

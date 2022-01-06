@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find blob_tracking)/launch/main.launch"/>
+    <include file="$(find blob_tracking)/launch/start_mira_blob_track.launch"/>
+</launch>

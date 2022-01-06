@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    <!-- Spawn All the robots with a time interval -->
+    <node name="spawn_mira_robot" pkg="urdf_demo_pkg" type="spawn_mira_closedloop.sh" respawn="false" output="screen"/>
+    <node name="spawn_gurdy_robot" pkg="urdf_demo_pkg" type="spawn_gurdy_closedloop.sh" respawn="false" output="screen"/>
+    <node name="spawn_jibo_robot" pkg="urdf_demo_pkg" type="spawn_jibo_closedloop.sh" respawn="false" output="screen"/>
+</launch>
